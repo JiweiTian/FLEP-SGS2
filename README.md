@@ -25,6 +25,6 @@ For the setup we are using the following equipment:
 2.	A Raspberry Pi 2 as the SCADA monitoring system. 
 3.	A Raspberry Pi 2 as the State Estimation algorithm calculation. 
 4.	A NI USB-6001 DAQ device as the data acquisition for the HIL simulation.
-5.  A Windows machine to run the Matlab/Simulink IEEE 9bus model.
+5.  A Windows machine to run the Matlab/Simulink IEEE 9bus model and Labview code.
 
 The platform is presented in (photo1) and the wiring diagram in photo2.
