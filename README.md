@@ -34,7 +34,7 @@ The platform:
 The testbed architecture:
 
 <p align="center">
-  <img width="460" height="300" src="https://github.com/momalab/FLEP-SGS2/blob/master/Setup_configuration.png">
+  <img width="690" height="450" src="https://github.com/momalab/FLEP-SGS2/blob/master/Setup_configuration.png">
 </p>
 
 # Instructions
