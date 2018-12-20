@@ -27,4 +27,83 @@ For the setup we are using the following equipment:
 4.	A NI USB-6001 DAQ device as the data acquisition for the HIL simulation.
 5.  A Windows machine to run the Matlab/Simulink IEEE 9bus model and Labview code.
 
-The platform is presented in (photo1) and the wiring diagram in photo2.
+The platform is presented in (add photo1) and the architecture diagram in (add photo2).
+
+# Instructions
+
+1. Make sure that the devices are assigned with the following static ips.
+•	SCADA RPi IP: 192.168.1.1
+•	Relay RPi IP: 192.168.1.2
+•	State Estimation (SE) RPi IP: 192.168.1.3
+•	Matlab/LabView PC IP: 192.168.1.4
+
+2. Istall OpenPLC and PLCOpenEditor software on the relay RPi (with the UniPi board) following the intructions here: http://www.openplcproject.com/getting-started
+
+Connect the push buttons, the relay outputs and the analog input to the UniPi (Check the wiring diagram):
+•	FAULT P1: I01
+•	FAULT P2: I02
+•	FAULT P3: I03
+•	LOCAL TRIP: I04
+•	LOCAL CLOSE: I05
+•	TRIP OUTPUT: Relay 1 (normally open)
+•	CLOSE OUTPUT: Relay 2 (normally open)
+•	Analog output from USB 6001 DAQ : AI1
+
+To run the software necessary for the OpenPLC please follow the below steps:
+•	Open RPi terminal
+•	cd PLCopen\ Editor/
+•	python PLCOpenEditor.py (to load the programming interface)
+•	file->Open
+•	PLCopen Editor->Relay.xml (file attached in this repository)
+•	File->Generate Program
+•	Pi->OpenPLC_v2->st_files->relay
+•	Open terminal (new tab)
+•	cd OpenPLC_v2/
+•	Sudo nodejs server.js
+•	Open RPi web browser
+•	Type 127.0.0.1:8080 at URL
+•	Choose file
+•	OpenPLC_v2->st_files->relay.st (choose all files on the right bottom to appear)
+•	Upload program
+•	Repeat steps 5-7 and 12-15 to change the type of the relay
+
+3. Install the pvbrowser software on the SCADA RPi following the instructions here:
+https://pvbrowser.de/pvbrowser/index.php?lang=en&menu=6
+
+•   Copy the folder smart_grid
+• 	Open RPi terminal
+•	Run pvdevelop
+•	file->open->smart_grid->pvs.pvproject
+•	Deamon->Modbus->Open->SE.mkmodbus->Compile
+•	Close
+•	Deamon->Modbus->Open->MATLAB.mkmodbus->Compile
+•	Close
+•	Deamon->Modbus->Open->PLC.mkmodbus->Compile
+•	Close
+•	Open terminal (new tab)
+•	cd smart_grid
+•	./SE
+•	./MATLAB
+•	./PLC
+•	Go to pvdevelop interface
+•	Action->Make
+•	Action->StartServer
+•	Action->pvbrowser
+
+4. For the codes of the State Estimation as well as detailed documentation please go the below GitHub directory:
+https://github.com/harryskon/FLEP-SGS-2
+
+5. Choose the simulation software and code of your choice and connect the Analog/digital signals from the NI-USB6001 to the relay RPi.
+
+6. PCAP traffic snapshots of simple scenarios are included at this repository. 
+
+7. For more information or additional data from this setup please contact:
+(add email)
+
+
+
+
+
+
+
+
