@@ -54,7 +54,7 @@ To run the software necessary for the OpenPLC please follow the below steps:
 •	cd PLCopen\ Editor/
 •	python PLCOpenEditor.py (to load the programming interface)
 •	file->Open
-•	PLCopen Editor->Relay.xml (file attached in this repository)
+•	PLCopen Editor->RelayIOR.xml (Instantaneous Overcurrent Relay)
 •	File->Generate Program
 •	Pi->OpenPLC_v2->st_files->relay
 •	Open terminal (new tab)
