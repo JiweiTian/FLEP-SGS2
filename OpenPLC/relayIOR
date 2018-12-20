@@ -1,0 +1,58 @@
+PROGRAM Overcurrent
+  VAR
+    phase_1 AT %IX0.1 : BOOL;
+  END_VAR
+  VAR
+    trip_fault : BOOL;
+  END_VAR
+  VAR
+    phase_2 AT %IX0.2 : BOOL;
+    phase_3 AT %IX0.3 : BOOL;
+    local_trip AT %IX0.4 : BOOL;
+    local_close AT %IX0.5 : BOOL;
+    trip AT %QX0.7 : BOOL;
+    close AT %QX0.6 : BOOL;
+    remote_trip AT %QX0.0 : BOOL;
+    remote_close AT %QX0.1 : BOOL;
+    current_RMS AT %MW0 : UINT;
+  END_VAR
+  VAR
+    ct_ratio : LINT := 1000;
+    threshold : UINT := 300;
+  END_VAR
+  VAR
+    I_RMS AT %IW0 : UINT;
+  END_VAR
+  VAR
+    T1 : TOF;
+    OR9_OUT : BOOL;
+    OR13_OUT : BOOL;
+    UINT_TO_LINT47_OUT : LINT;
+    MUL19_OUT : LINT;
+    DIV46_OUT : LINT;
+    LINT_TO_UINT48_OUT : UINT;
+    GE26_OUT : BOOL;
+  END_VAR
+
+  OR9_OUT := OR(local_trip, remote_trip, phase_1, phase_2, phase_3, trip_fault);
+  T1(IN := OR9_OUT, PT := T#2000ms);
+  trip := T1.Q;
+  OR13_OUT := OR(local_close, remote_close);
+  close := OR13_OUT;
+  UINT_TO_LINT47_OUT := UINT_TO_LINT(I_RMS);
+  MUL19_OUT := MUL(UINT_TO_LINT47_OUT, ct_ratio);
+  DIV46_OUT := DIV(MUL19_OUT, 2885);
+  LINT_TO_UINT48_OUT := LINT_TO_UINT(DIV46_OUT);
+  current_RMS := LINT_TO_UINT48_OUT;
+  GE26_OUT := GE(LINT_TO_UINT48_OUT, threshold);
+  trip_fault := GE26_OUT;
+END_PROGRAM
+
+
+CONFIGURATION Config0
+
+  RESOURCE Res0 ON PLC
+    TASK TaskMain(INTERVAL := T#50ms,PRIORITY := 0);
+    PROGRAM Inst0 WITH TaskMain : Overcurrent;
+  END_RESOURCE
+END_CONFIGURATION
