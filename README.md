@@ -29,8 +29,8 @@ For the setup we are using the following equipment:
 
 The platform and the architecture diagram:
 
-![alt text](https://raw.githubusercontent.com/momalab/FLEP-SGS2/Setup.jpg)
-![alt text](https://raw.githubusercontent.com/momalab/FLEP-SGS2/Setup configuration.jpg)
+![alt text](https://raw.githubusercontent.com/momalab/FLEP-SGS2/Setup.png)
+![alt text](https://raw.githubusercontent.com/momalab/FLEP-SGS2/Setup_configuration.png)
 
 # Instructions
 
