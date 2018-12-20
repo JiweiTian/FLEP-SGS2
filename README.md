@@ -100,7 +100,10 @@ https://www.mathworks.com/help/supportpkg/parrot/ref/udpreceive.html?searchHighl
 https://www.mathworks.com/help/sldrt/ref/realtimesync.html
 https://www.mathworks.com/help/daq/simulink-data-acquisition.html
 
-6. PCAP traffic snapshots of simple scenarios are included at this repository. 
+6. PCAP traffic snapshots of the following 2 simple scenarios are included at this repository:
+
+  1. Monitor at the SCADA - Send trip command - Send close command
+  2. Monitor at the Relay - Fault detected- Trip coil activated (report to SCADA) - Close command sends back to the relay after the fault is clear.
 
 7. For Man-In-The-Middle attacks you can install Ettercap software:
 
