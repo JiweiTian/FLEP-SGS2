@@ -27,10 +27,15 @@ For the setup we are using the following equipment:
 4.	A NI USB-6001 DAQ device as the data acquisition for the HIL simulation.
 5.  A Windows machine to run the Matlab/Simulink IEEE 9bus model and Labview code.
 
-The platform and the architecture diagram:
+The platform:
 
 ![alt text](https://github.com/momalab/FLEP-SGS2/blob/master/Setup.png)
-![alt text](https://github.com/momalab/FLEP-SGS2/blob/master/Setup_configuration.png)
+
+The testbed architecture:
+
+<p align="center">
+  <img width="460" height="300" src="https://github.com/momalab/FLEP-SGS2/blob/master/Setup_configuration.png">
+</p>
 
 # Instructions
 
