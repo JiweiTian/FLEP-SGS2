@@ -102,7 +102,11 @@ https://www.mathworks.com/help/daq/simulink-data-acquisition.html
 
 6. PCAP traffic snapshots of simple scenarios are included at this repository. 
 
-7. For more information or additional data from this setup please contact:
+7. For Man-In-The-Middle attacks you can install Ettercap software:
+
+https://www.ettercap-project.org/
+
+8. For more information or additional data from this setup please contact:
 (add email)
 
 
