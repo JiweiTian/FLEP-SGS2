@@ -29,6 +29,9 @@ For the setup we are using the following equipment:
 
 The platform and the architecture diagram:
 
+![alt text](https://raw.githubusercontent.com/momalab/FLEP-SGS2/Setup.jpg)
+![alt text](https://raw.githubusercontent.com/momalab/FLEP-SGS2/Setup configuration.jpg)
+
 # Instructions
 
 1. Make sure that the devices are assigned with the following static ips.
