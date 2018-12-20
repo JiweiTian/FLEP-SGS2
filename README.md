@@ -29,7 +29,7 @@ For the setup we are using the following equipment:
 
 The platform:
 
-![alt text](https://github.com/momalab/FLEP-SGS2/blob/master/Setup.png)
+![alt text](https://github.com/momalab/FLEP-SGS2/blob/master/Setup_small.png)
 
 The testbed architecture:
 
