@@ -157,8 +157,9 @@ https://www.mathworks.com/help/daq/simulink-data-acquisition.html
 
 6. PCAP traffic snapshots of the following 2 simple scenarios are included at this repository:
 
-  • Monitor at the SCADA - Send trip command - Send close command
-  • Monitor at the Relay - Fault detected- Trip coil activated (report to SCADA) - Close command sends back to the relay after the fault is clear.
+  • Monitor at the SCADA: Send trip command - Send close command
+  
+  • Monitor at the Relay: Fault detected- Trip coil activated (report to SCADA) - Close command sends back to the relay after the fault is clear.
 
 7. For Man-In-The-Middle attacks you can install Ettercap software:
 
