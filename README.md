@@ -93,7 +93,12 @@ https://pvbrowser.de/pvbrowser/index.php?lang=en&menu=6
 4. For the codes of the State Estimation as well as detailed documentation please go the below GitHub directory:
 https://github.com/harryskon/FLEP-SGS-2
 
-5. Choose the simulation software and code of your choice and connect the Analog/digital signals from the NI-USB6001 to the relay RPi.
+5. Choose the simulation software and code of your choice and connect the Analog/digital signals from the NI-USB6001 to the relay RPi. If you choose Matlab/Simulink to develop your model use those blocks for UDP communications and connection to the DAQ device: 
+
+https://www.mathworks.com/help/supportpkg/parrot/ref/udpsend.html?searchHighlight=UDP&s_tid=doc_srchtitle
+https://www.mathworks.com/help/supportpkg/parrot/ref/udpreceive.html?searchHighlight=UDP&s_tid=doc_srchtitle
+https://www.mathworks.com/help/sldrt/ref/realtimesync.html
+https://www.mathworks.com/help/daq/simulink-data-acquisition.html
 
 6. PCAP traffic snapshots of simple scenarios are included at this repository. 
 
