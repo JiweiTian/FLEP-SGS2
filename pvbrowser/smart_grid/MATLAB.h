@@ -1,0 +1,13 @@
+// Modbus Signal assignment of MATLAB
+#define MATLAB_SHARED_MEMORY "/srv/automation/shm/modbusMATLAB.shm"
+#define MATLAB_MAILBOX "/srv/automation/mbx/modbusMATLAB.mbx"
+
+#define MATLAB_CYCLE1_BASE 0
+#define MATLAB_CYCLE1_NUM 84
+#define MATLAB_CYCLE1_NUM_BYTES 168
+
+#define MATLAB_LIFE_COUNTER_BASE 168
+#define MATLAB_READ_ERROR_COUNT_BASE 170
+#define MATLAB_WRITE_ERROR_COUNT_BASE 172
+
+#define MATLAB_SHARED_MEMORY_SIZE 174
