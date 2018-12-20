@@ -27,7 +27,7 @@ For the setup we are using the following equipment:
 4.	A NI USB-6001 DAQ device as the data acquisition for the HIL simulation.
 5.  A Windows machine to run the Matlab/Simulink IEEE 9bus model and Labview code.
 
-The platform is presented in (add photo1) and the architecture diagram in (add photo2).
+The platform and the architecture diagram:
 
 # Instructions
 
@@ -109,8 +109,7 @@ https://www.mathworks.com/help/daq/simulink-data-acquisition.html
 
 https://www.ettercap-project.org/
 
-8. For more information or additional data from this setup please contact:
-(add email)
+8. For more information or additional data from this setup please contact Marios Sazos at marios.sazos@nyu.edu
 
 
 
