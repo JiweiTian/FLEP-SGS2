@@ -118,9 +118,9 @@ Action->pvbrowser
 
 8. Choose the simulation software and code of your choice and connect the Analog/digital signals from the NI-USB6001 to the relay RPi. If you choose Matlab/Simulink to develop your model use those blocks for UDP communication, real time simulation and for connection to the DAQ device:
 
-[Simulink UDP send](https://www.mathworks.com/help/supportpkg/parrot/ref/udpsend.html)
+[Simulink UDP send](https://www.mathworks.com/help/dsp/ref/udpsend.html)
 
-[Simulink UDP receive](https://www.mathworks.com/help/supportpkg/parrot/ref/udpreceive.html)
+[Simulink UDP receive](https://www.mathworks.com/help/dsp/ref/udpreceive.html)
 
 [Simulink real time sync](https://www.mathworks.com/help/sldrt/ref/realtimesync.html)
 
