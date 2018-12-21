@@ -4,10 +4,10 @@ grid. Power systems simulation tools are integrated with opensource software and
 allows to investigate the performance of the testbed components and evaluate different cyber-attack scenarios on the power system
 operation while providing a user-friendly interface.
 
-# Cite FLEP-SGS2
 
+## Cite FLEP-SGS
 If you find our code useful, please consider citing
-
+```
 @inproceedings{konstantinou2019isgt,
     title={FLEP-SGS$^2$: a Flexible and Low-cost Evaluation Platform for Smart Grid Systems Security},
     author={Konstantinou, Charalambos and Sazos, Marios and Maniatakos, Michail},
@@ -16,8 +16,9 @@ If you find our code useful, please consider citing
     year={2019},
     organization={IEEE}
 }
+```
 
-# Getting started
+## Getting started
 Follow the instructions below to get a copy of the project and effortlessly develop FLEP-SGS2.
 
 For the setup we are using the following equipment:
@@ -37,7 +38,7 @@ The testbed architecture:
   <img width="690" height="450" src="https://github.com/momalab/FLEP-SGS2/blob/master/Setup_configuration.png">
 </p>
 
-# Instructions
+## Instructions
 
 1. Make sure that the devices are assigned with the following static ips.
 •	SCADA RPi IP: 192.168.1.1
