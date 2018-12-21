@@ -137,6 +137,6 @@ Action->pvbrowser
   b) Trip coil activated and report the trip coil to SCADA  
   c) Close command sends back to the relay after the fault is clear  
 
-10. For Man-In-The-Middle attacks you can install and use the [Ettercap](https://www.ettercap-project.org/) software:
+10. For Man-In-The-Middle attacks you can install and use the [Ettercap](https://www.ettercap-project.org/) software.
 
 **For more information or additional data from this setup please contact Marios Sazos at marios.sazos@nyu.edu**
