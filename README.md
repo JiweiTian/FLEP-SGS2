@@ -38,34 +38,28 @@ The testbed architecture:
   <img width="690" height="450" src="https://github.com/momalab/FLEP-SGS2/blob/master/Setup_configuration.png">
 </p>
 
-## Instructions
+### Instructions
 
 1. Make sure that the devices are assigned with the following static ips.
+```
 •	SCADA RPi IP: 192.168.1.1
 •	Relay RPi IP: 192.168.1.2
 •	State Estimation (SE) RPi IP: 192.168.1.3
 •	Matlab/LabView PC IP: 192.168.1.4
-
+```
 2. Install OpenPLC and PLCOpenEditor software on the relay RPi (with the UniPi board) following the intructions here: http://www.openplcproject.com/getting-started
 
 Connect the push buttons, the relay outputs and the analog input to the UniPi (Check the wiring diagram):
-
+```
 •	FAULT P1: I01
-
 •	FAULT P2: I02
-
 •	FAULT P3: I03
-
 •	LOCAL TRIP: I04
-
 •	LOCAL CLOSE: I05
-
 •	TRIP OUTPUT: Relay 1 (normally open)
-
 •	CLOSE OUTPUT: Relay 2 (normally open)
-
 •	Analog output from USB 6001 DAQ : AI1
-
+```
 To run the software necessary for the OpenPLC please follow the below steps:
 
 •	Open RPi terminal
