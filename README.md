@@ -118,7 +118,7 @@ Action->pvbrowser
 
 7. For the codes of the State Estimation as well as detailed documentation please go to the below GitHub repository:
 
-###**[FLEP-SGS - State Estimation](https://github.com/harryskon/FLEP-SGS-2)**
+**[FLEP-SGS - State Estimation](https://github.com/harryskon/FLEP-SGS-2)**
 
 8. Choose the simulation software and code of your choice and connect the Analog/digital signals from the NI-USB6001 to the relay RPi. If you choose Matlab/Simulink to develop your model use those blocks for UDP communications and connection to the DAQ device:
 
