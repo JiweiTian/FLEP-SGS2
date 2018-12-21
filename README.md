@@ -1,7 +1,7 @@
 # FLEP-SGS2
 A Flexible and Low-cost Evaluation Platform for Smart Grid Systems Security assessment. Power systems simulation tools are integrated with open-source software running on Raspberry Pis. FLEP-SGS2 allows to investigate the performance of the testbed components and evaluate different cyber-attack scenarios on the power system operation while providing a user-friendly interface.
 
-## Cite FLEP-SGS
+## Cite FLEP-SGS2
 If you find our code useful, please cite
 ```
 @inproceedings{konstantinou2019isgt,
@@ -114,7 +114,7 @@ Action->pvbrowser
 
 7. For the codes of the State Estimation as well as detailed documentation please go to the below GitHub repository:
 
-**[FLEP-SGS - State Estimation](https://github.com/harryskon/FLEP-SGS-2)**
+**[FLEP-SGS2 - State Estimation](https://github.com/harryskon/FLEP-SGS-2)**
 
 8. Choose the simulation software and code of your choice and connect the Analog/digital signals from the NI-USB6001 to the relay RPi. If you choose Matlab/Simulink to develop your model use those blocks for UDP communication, real time simulation and for connection to the DAQ device:
 
@@ -137,8 +137,6 @@ Action->pvbrowser
   b) Trip coil activated and report the trip coil to SCADA  
   c) Close command sends back to the relay after the fault is clear  
 
-10. For Man-In-The-Middle attacks you can install and use the Ettercap software:
-
-[Ettercap](https://www.ettercap-project.org/)
+10. For Man-In-The-Middle attacks you can install and use the [Ettercap](https://www.ettercap-project.org/) software:
 
 **For more information or additional data from this setup please contact Marios Sazos at marios.sazos@nyu.edu**
