@@ -21,11 +21,11 @@ Follow the instructions below to get a copy of the project and effortlessly deve
 
 For the setup we are using the following equipment:
 ```
-Raspberry Pi 2 with a UniPi extension board as the Bus6 overvoltage protection relay. 
+Raspberry Pi 2 with a UniPi extension board as the Bus6 overcurrent protection relay. 
 Raspberry Pi 2 as the SCADA monitoring system. 
 Raspberry Pi 2 as the State Estimation algorithm calculation. 
 NI USB-6001 DAQ device as the data acquisition for the HIL simulation.
-A Windows machine to run the Matlab/Simulink IEEE 9bus model and Labview code.
+A Windows machine to run the Matlab/Simulink IEEE 9bus model and Labview code for UDP/Modbus TCP communication.
 ```
 The platform:
 
@@ -39,7 +39,7 @@ The testbed architecture:
 
 ### Prerequisites
 
-What things you need to install and how to install them
+What things you need to install and how to install them:
 
 PLC code uploader - [OpenPLC](http://www.openplcproject.com/getting-started)
 
@@ -120,7 +120,7 @@ Action->pvbrowser
 
 **[FLEP-SGS - State Estimation](https://github.com/harryskon/FLEP-SGS-2)**
 
-8. Choose the simulation software and code of your choice and connect the Analog/digital signals from the NI-USB6001 to the relay RPi. If you choose Matlab/Simulink to develop your model use those blocks for UDP communications and connection to the DAQ device:
+8. Choose the simulation software and code of your choice and connect the Analog/digital signals from the NI-USB6001 to the relay RPi. If you choose Matlab/Simulink to develop your model use those blocks for UDP communication, real time simulation and for connection to the DAQ device:
 
 [Simulink UDP send](https://www.mathworks.com/help/supportpkg/parrot/ref/udpsend.html)
 
@@ -130,13 +130,18 @@ Action->pvbrowser
 
 [Simulink data acquisition](https://www.mathworks.com/help/daq/simulink-data-acquisition.html)
 
-9. PCAP traffic snapshots, captured on Wireshark software, of the following 2 simple scenarios are included at this repository:
+9. PCAP traffic snapshots, captured on [Wireshark software](https://www.wireshark.org/), of the following 2 scenarios are included at this repository:
 
-  • Monitor at the SCADA: Send trip command - Send close command
+  • Monitor at the SCADA: 
+  a) Send trip command to the relay
+  b) Send close command to the relay
   
-  • Monitor at the Relay: Fault detected- Trip coil activated (report to SCADA) - Close command sends back to the relay after the fault is clear.
+  • Monitor at the Relay:
+  a) Fault detected by the relay
+  b) Trip coil activated and report the trip coil to SCADA
+  c) Close command sends back to the relay after the fault is clear
 
-10. For Man-In-The-Middle attacks you can install Ettercap software:
+10. For Man-In-The-Middle attacks you can install and use the Ettercap software:
 
 [Ettercap](https://www.ettercap-project.org/)
 
