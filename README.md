@@ -3,7 +3,6 @@ A Flexible and Low-cost Evaluation Platform for Smart Grid Systems Security to e
 grid. Power systems simulation tools are integrated with open-source software and code running on Raspberry Pis. FLEP-SGS2
 allows to investigate the performance of the testbed components and evaluate different cyber-attack scenarios on the power system operation while providing a user-friendly interface.
 
-
 ## Cite FLEP-SGS
 If you find our code useful, please consider citing
 ```
@@ -21,12 +20,13 @@ If you find our code useful, please consider citing
 Follow the instructions below to get a copy of the project and effortlessly develop FLEP-SGS2.
 
 For the setup we are using the following equipment:
-1.	A Raspberry Pi 2 with a UniPi extension board as the Bus6 overvoltage protection relay. 
-2.	A Raspberry Pi 2 as the SCADA monitoring system. 
-3.	A Raspberry Pi 2 as the State Estimation algorithm calculation. 
-4.	A NI USB-6001 DAQ device as the data acquisition for the HIL simulation.
-5.  A Windows machine to run the Matlab/Simulink IEEE 9bus model and Labview code.
-
+```
+Raspberry Pi 2 with a UniPi extension board as the Bus6 overvoltage protection relay. 
+Raspberry Pi 2 as the SCADA monitoring system. 
+Raspberry Pi 2 as the State Estimation algorithm calculation. 
+NI USB-6001 DAQ device as the data acquisition for the HIL simulation.
+A Windows machine to run the Matlab/Simulink IEEE 9bus model and Labview code.
+```
 The platform:
 
 ![alt text](https://github.com/momalab/FLEP-SGS2/blob/master/Setup.png)
@@ -37,26 +37,26 @@ The testbed architecture:
   <img width="690" height="450" src="https://github.com/momalab/FLEP-SGS2/blob/master/Setup_configuration.png">
 </p>
 
-### Instructions
-
-#### Prerequisites
+### Prerequisites
 
 What things you need to install and how to install them
 
-##### PLC code uploader - [OpenPLC](http://www.openplcproject.com/getting-started)
-##### PLC ladder logic programming- [PLCOpenEditor](http://www.openplcproject.com/plcopen-editor)
-##### SCADA monitoring software - [pvbrowser](https://pvbrowser.de/pvbrowser/index.php?lang=en&menu=6)
+PLC code uploader - [OpenPLC](http://www.openplcproject.com/getting-started)
+PLC ladder logic programming- [PLCOpenEditor](http://www.openplcproject.com/plcopen-editor)
+SCADA monitoring software - [pvbrowser](https://pvbrowser.de/pvbrowser/index.php?lang=en&menu=6)
 
-Make sure that the devices are assigned with the following static IPs.
+### Instructions
+
+1. Make sure that the devices are assigned with the following static IPs.
 ```
 SCADA RPi IP: 192.168.1.1
 Relay RPi IP: 192.168.1.2
 State Estimation (SE) RPi IP: 192.168.1.3
 Matlab/LabView PC IP: 192.168.1.4
 ```
-Install OpenPLC and PLCOpenEditor software on the relay RPi (with the UniPi board).
+2. Install OpenPLC and PLCOpenEditor software on the relay RPi (with the UniPi board).
 
-Connect the push buttons, the relay outputs and the analog input to the UniPi board:
+3. Connect the push buttons, the relay outputs and the analog input to the UniPi board:
 ```
 FAULT P1: I01
 FAULT P2: I02
@@ -67,7 +67,8 @@ TRIP OUTPUT: Relay 1 (normally open)
 CLOSE OUTPUT: Relay 2 (normally open)
 Analog output from USB 6001 DAQ : AI1
 ```
-To run the software necessary for the OpenPLC please follow the below steps:
+
+4. To run the software necessary for the OpenPLC please follow the below steps:
 ```
 Open RPi terminal
 $ cd PLCopen\ Editor/
@@ -86,9 +87,10 @@ OpenPLC_v2->st_files->relay.st (choose all files on the right bottom to appear)
 Upload program
 Repeat steps to change the type of the relay (IOR, DTOR, IDMTOR)
 ```
-Install the pvbrowser software on the SCADA RPi.
 
-To run the software necessary for the pvbrowser please follow the below steps:
+5. Install the pvbrowser software on the SCADA RPi.
+
+6. To run the software necessary for the pvbrowser please follow the below steps:
 
 ```
 Copy the folder smart_grid
@@ -112,27 +114,28 @@ Action->StartServer
 Action->pvbrowser
 ```
 
-For the codes of the State Estimation as well as detailed documentation please go the below GitHub repository:
-#[FLEP-SGS - State Estimation](https://github.com/harryskon/FLEP-SGS-2)
+7. For the codes of the State Estimation as well as detailed documentation please go to the below GitHub repository:
 
-Choose the simulation software and code of your choice and connect the Analog/digital signals from the NI-USB6001 to the relay RPi. If you choose Matlab/Simulink to develop your model use those blocks for UDP communications and connection to the DAQ device:
+###**[FLEP-SGS - State Estimation](https://github.com/harryskon/FLEP-SGS-2)**
 
-#####[Simulink UDP send](https://www.mathworks.com/help/supportpkg/parrot/ref/udpsend.html?searchHighlight=UDP&s_tid=doc_srchtitle)
+8. Choose the simulation software and code of your choice and connect the Analog/digital signals from the NI-USB6001 to the relay RPi. If you choose Matlab/Simulink to develop your model use those blocks for UDP communications and connection to the DAQ device:
 
-#####[Simulink UDP receive](https://www.mathworks.com/help/supportpkg/parrot/ref/udpreceive.html?searchHighlight=UDP&s_tid=doc_srchtitle)
+###[Simulink UDP send](https://www.mathworks.com/help/supportpkg/parrot/ref/udpsend.html)
 
-#####[Simulink real time sync](https://www.mathworks.com/help/sldrt/ref/realtimesync.html)
+###[Simulink UDP receive](https://www.mathworks.com/help/supportpkg/parrot/ref/udpreceive.html)
 
-#####[Simulink data acquisition](https://www.mathworks.com/help/daq/simulink-data-acquisition.html)
+###[Simulink real time sync](https://www.mathworks.com/help/sldrt/ref/realtimesync.html)
 
-PCAP traffic snapshots, captured on Wireshark software, of the following 2 simple scenarios are included at this repository:
+###[Simulink data acquisition](https://www.mathworks.com/help/daq/simulink-data-acquisition.html)
+
+9. PCAP traffic snapshots, captured on Wireshark software, of the following 2 simple scenarios are included at this repository:
 
   • Monitor at the SCADA: Send trip command - Send close command
   
   • Monitor at the Relay: Fault detected- Trip coil activated (report to SCADA) - Close command sends back to the relay after the fault is clear.
 
-For Man-In-The-Middle attacks you can install Ettercap software:
+10. For Man-In-The-Middle attacks you can install Ettercap software:
 
-##### [Ettercap](https://www.ettercap-project.org/)
+### [Ettercap](https://www.ettercap-project.org/)
 
-For more information or additional data from this setup please contact Marios Sazos at marios.sazos@nyu.edu
+**For more information or additional data from this setup please contact Marios Sazos at marios.sazos@nyu.edu**
