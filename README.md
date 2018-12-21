@@ -25,7 +25,7 @@ Raspberry Pi 2 with a UniPi extension board as the Bus6 overcurrent protection r
 Raspberry Pi 2 as the SCADA monitoring system. 
 Raspberry Pi 2 as the State Estimation algorithm calculation. 
 NI USB-6001 DAQ device as the data acquisition for the HIL simulation.
-A Windows machine to run the Matlab/Simulink IEEE 9bus model and Labview code for UDP/Modbus TCP communication.
+A Windows machine to run the Matlab/Simulink IEEE 9bus model and Labview code for UDP/Modbus communication.
 ```
 The platform:
 
