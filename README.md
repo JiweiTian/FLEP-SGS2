@@ -1,10 +1,8 @@
 # FLEP-SGS2
-A Flexible and Low-cost Evaluation Platform for Smart Grid Systems Security to examine security scenarios in smart
-grid. Power systems simulation tools are integrated with open-source software and code running on Raspberry Pis. FLEP-SGS2
-allows to investigate the performance of the testbed components and evaluate different cyber-attack scenarios on the power system operation while providing a user-friendly interface.
+A Flexible and Low-cost Evaluation Platform for Smart Grid Systems Security assessment. Power systems simulation tools are integrated with open-source software running on Raspberry Pis. FLEP-SGS2 allows to investigate the performance of the testbed components and evaluate different cyber-attack scenarios on the power system operation while providing a user-friendly interface.
 
 ## Cite FLEP-SGS
-If you find our code useful, please consider citing
+If you find our code useful, please cite
 ```
 @inproceedings{konstantinou2019isgt,
     title={FLEP-SGS$^2$: a Flexible and Low-cost Evaluation Platform for Smart Grid Systems Security},
@@ -17,9 +15,9 @@ If you find our code useful, please consider citing
 ```
 
 ## Getting started
-Follow the instructions below to get a copy of the project and effortlessly develop FLEP-SGS2.
+Follow the instructions below to instantiate FLEP-SGS2.
 
-For the setup we are using the following equipment:
+Equipment needed:
 ```
 Raspberry Pi 2 with a UniPi extension board as the Bus6 overcurrent protection relay. 
 Raspberry Pi 2 as the SCADA monitoring system. 
@@ -39,8 +37,6 @@ The testbed architecture:
 
 ### Prerequisites
 
-What things you need to install and how to install them:
-
 PLC code uploader - [OpenPLC](http://www.openplcproject.com/getting-started)
 
 PLC ladder logic programming- [PLCOpenEditor](http://www.openplcproject.com/plcopen-editor)
@@ -49,7 +45,7 @@ SCADA monitoring software - [pvbrowser](https://pvbrowser.de/pvbrowser/index.php
 
 ### Instructions
 
-1. Make sure that the devices are assigned with the following static IPs.
+1. Make sure that the devices are assigned the following static IPs:
 ```
 SCADA RPi IP: 192.168.1.1
 Relay RPi IP: 192.168.1.2
@@ -132,11 +128,11 @@ Action->pvbrowser
 
 9. PCAP traffic snapshots, captured on [Wireshark software](https://www.wireshark.org/), of the following 2 scenarios are included at this repository:
 
-  **Monitor at the SCADA:**  
+  **SCADA Monitoring:**  
   a) Send trip command to the relay  
   b) Send close command to the relay  
   
-  **Monitor at the Relay:**  
+  **Relay Monitoring:**  
   a) Fault detected by the relay  
   b) Trip coil activated and report the trip coil to SCADA  
   c) Close command sends back to the relay after the fault is clear  
