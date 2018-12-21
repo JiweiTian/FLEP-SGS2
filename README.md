@@ -42,100 +42,67 @@ The testbed architecture:
 
 1. Make sure that the devices are assigned with the following static ips.
 ```
-•	SCADA RPi IP: 192.168.1.1
-•	Relay RPi IP: 192.168.1.2
-•	State Estimation (SE) RPi IP: 192.168.1.3
-•	Matlab/LabView PC IP: 192.168.1.4
+SCADA RPi IP: 192.168.1.1
+Relay RPi IP: 192.168.1.2
+State Estimation (SE) RPi IP: 192.168.1.3
+Matlab/LabView PC IP: 192.168.1.4
 ```
 2. Install OpenPLC and PLCOpenEditor software on the relay RPi (with the UniPi board) following the intructions here: http://www.openplcproject.com/getting-started
 
 Connect the push buttons, the relay outputs and the analog input to the UniPi (Check the wiring diagram):
 ```
-•	FAULT P1: I01
-•	FAULT P2: I02
-•	FAULT P3: I03
-•	LOCAL TRIP: I04
-•	LOCAL CLOSE: I05
-•	TRIP OUTPUT: Relay 1 (normally open)
-•	CLOSE OUTPUT: Relay 2 (normally open)
-•	Analog output from USB 6001 DAQ : AI1
+FAULT P1: I01
+FAULT P2: I02
+FAULT P3: I03
+LOCAL TRIP: I04
+LOCAL CLOSE: I05
+TRIP OUTPUT: Relay 1 (normally open)
+CLOSE OUTPUT: Relay 2 (normally open)
+Analog output from USB 6001 DAQ : AI1
 ```
 To run the software necessary for the OpenPLC please follow the below steps:
-
-•	Open RPi terminal
-
-•	cd PLCopen\ Editor/
-
-•	python PLCOpenEditor.py (to load the programming interface)
-
-•	file->Open
-
-•	PLCopen Editor->RelayIOR.xml (Instantaneous Overcurrent Relay)
-
-•	File->Generate Program
-
-•	Pi->OpenPLC_v2->st_files->relay
-
-•	Open terminal (new tab)
-
-•	cd OpenPLC_v2/
-
-•	Sudo nodejs server.js
-
-•	Open RPi web browser
-
-•	Type 127.0.0.1:8080 at URL
-
-•	Choose file
-
-•	OpenPLC_v2->st_files->relay.st (choose all files on the right bottom to appear)
-
-•	Upload program
-
-•	Repeat steps 5-7 and 12-15 to change the type of the relay
-
+```
+Open RPi terminal
+$ cd PLCopen\ Editor/
+$python PLCOpenEditor.py (to load the programming interface)
+file->Open
+PLCopen Editor->RelayIOR.xml (Instantaneous Overcurrent Relay)
+File->Generate Program
+Pi->OpenPLC_v2->st_files->relay
+Open new terminal
+$cd OpenPLC_v2/
+$sudo nodejs server.js
+Open RPi web browser
+Type 127.0.0.1:8080 at URL
+Choose file
+OpenPLC_v2->st_files->relay.st (choose all files on the right bottom to appear)
+Upload program
+Repeat steps 5-7 and 12-15 to change the type of the relay
+```
 3. Install the pvbrowser software on the SCADA RPi following the instructions here:
 
 https://pvbrowser.de/pvbrowser/index.php?lang=en&menu=6
-
-•   Copy the folder smart_grid
-
-• 	Open RPi terminal
-
-•	Run pvdevelop
-
-•	file->open->smart_grid->pvs.pvproject
-
-•	Deamon->Modbus->Open->SE.mkmodbus->Compile
-
-•	Close
-
-•	Deamon->Modbus->Open->MATLAB.mkmodbus->Compile
-
-•	Close
-
-•	Deamon->Modbus->Open->PLC.mkmodbus->Compile
-
-•	Close
-
-•	Open terminal (new tab)
-
-•	cd smart_grid
-
-•	./SE
-
-•	./MATLAB
-
-•	./PLC
-
-•	Go to pvdevelop interface
-
-•	Action->Make
-
-•	Action->StartServer
-
-•	Action->pvbrowser
-
+```
+Copy the folder smart_grid
+Open RPi terminal
+$pvdevelop
+file->open->smart_grid->pvs.pvproject
+Deamon->Modbus->Open->SE.mkmodbus->Compile
+Close
+Deamon->Modbus->Open->MATLAB.mkmodbus->Compile
+Close
+Deamon->Modbus->Open->PLC.mkmodbus->Compile
+Close
+Open new terminal
+$cd smart_grid
+$./SE
+$./MATLAB
+$./PLC
+Go to pvdevelop interface
+Action->Make
+Action->StartServer
+Action->pvbrowser
+```
 
 4. For the codes of the State Estimation as well as detailed documentation please go the below GitHub directory:
 https://github.com/harryskon/FLEP-SGS-2
