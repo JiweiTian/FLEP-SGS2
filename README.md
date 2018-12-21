@@ -132,13 +132,11 @@ Action->pvbrowser
 
 9. PCAP traffic snapshots, captured on [Wireshark software](https://www.wireshark.org/), of the following 2 scenarios are included at this repository:
 
-  • Monitor at the SCADA:
-  
+  **Monitor at the SCADA:**
   a) Send trip command to the relay  
   b) Send close command to the relay  
   
-  • Monitor at the Relay:
-  
+  **Monitor at the Relay:**
   a) Fault detected by the relay  
   b) Trip coil activated and report the trip coil to SCADA  
   c) Close command sends back to the relay after the fault is clear  
