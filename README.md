@@ -42,7 +42,9 @@ The testbed architecture:
 What things you need to install and how to install them
 
 PLC code uploader - [OpenPLC](http://www.openplcproject.com/getting-started)
+
 PLC ladder logic programming- [PLCOpenEditor](http://www.openplcproject.com/plcopen-editor)
+
 SCADA monitoring software - [pvbrowser](https://pvbrowser.de/pvbrowser/index.php?lang=en&menu=6)
 
 ### Instructions
@@ -120,13 +122,13 @@ Action->pvbrowser
 
 8. Choose the simulation software and code of your choice and connect the Analog/digital signals from the NI-USB6001 to the relay RPi. If you choose Matlab/Simulink to develop your model use those blocks for UDP communications and connection to the DAQ device:
 
-###[Simulink UDP send](https://www.mathworks.com/help/supportpkg/parrot/ref/udpsend.html)
+[Simulink UDP send](https://www.mathworks.com/help/supportpkg/parrot/ref/udpsend.html)
 
-###[Simulink UDP receive](https://www.mathworks.com/help/supportpkg/parrot/ref/udpreceive.html)
+[Simulink UDP receive](https://www.mathworks.com/help/supportpkg/parrot/ref/udpreceive.html)
 
-###[Simulink real time sync](https://www.mathworks.com/help/sldrt/ref/realtimesync.html)
+[Simulink real time sync](https://www.mathworks.com/help/sldrt/ref/realtimesync.html)
 
-###[Simulink data acquisition](https://www.mathworks.com/help/daq/simulink-data-acquisition.html)
+[Simulink data acquisition](https://www.mathworks.com/help/daq/simulink-data-acquisition.html)
 
 9. PCAP traffic snapshots, captured on Wireshark software, of the following 2 simple scenarios are included at this repository:
 
@@ -136,6 +138,6 @@ Action->pvbrowser
 
 10. For Man-In-The-Middle attacks you can install Ettercap software:
 
-### [Ettercap](https://www.ettercap-project.org/)
+[Ettercap](https://www.ettercap-project.org/)
 
 **For more information or additional data from this setup please contact Marios Sazos at marios.sazos@nyu.edu**
